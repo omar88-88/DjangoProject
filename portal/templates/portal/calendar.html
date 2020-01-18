@@ -1,0 +1,43 @@
+{% extends 'portal/base.html' %}
+{% block main_content %}
+{% load crispy_forms_tags %}
+<body>
+
+  <div class="col-sm-8">
+      <h3 style="margin-bottom: 20px; margin-top: 10px">Aktiviteter</h3>
+  </div>
+
+      <form method="GET" action=".">
+
+<div class="col-sm-8">
+
+
+<table class="table" id="myTable">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Title</th>
+      <th scope="col">Dato</th>
+      <th scope="col">Bydel</th>
+      <th scope="col">Ham</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for item in table %}
+  <tr>
+     <th scope="row"> {{item.id}}</th>
+
+     <td>{{item.title}}</td>
+     <td>{{item.date_test}}</td>
+     <td>{{item.bydel}}</td>
+     <td>{{item.ham}}</td>
+  </tr>
+{% endfor %}
+  </tbody>
+</table>
+</div>
+
+{% endblock %}
+      </form>
+</body>
+</html>

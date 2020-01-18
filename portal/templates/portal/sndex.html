@@ -1,0 +1,81 @@
+{% extends 'portal/base.html' %}
+
+<body>
+
+{% block main_content %}
+
+
+<h2>My Phonebook</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+<ul id="myUL">
+  <li><a href="#">Adele</a></li>
+  <li><a href="#">Agnes</a></li>
+
+  <li><a href="#">Billy</a></li>
+  <li><a href="#">Bob</a></li>
+
+  <li><a href="#">Calvin</a></li>
+  <li><a href="#">Christina</a></li>
+  <li><a href="#">Cindy</a></li>
+</ul>
+
+
+<!-- this is the body of the page ------->
+    <div class="container">
+       <div class="item-container">
+		<div class="row">
+ 			 {% for item in object_list1 %}
+ 		 <div class="col-lg-3">
+
+ 		 		<div class="product-item">
+
+  			{{item}}
+  		</div>
+  	     </div>
+
+			{% endfor%}
+		</div>
+	
+
+	<div class="item-container">
+		<div class="row" style="margin-top: 50px">
+ 			 {% for item in object_list2 %}
+ 		 <div class="col-lg-3">
+ 		 	<div class="product-item">
+ 		 		<div> <img src="{{item.image.url}}" class="img-responsive" width="240"></div>
+ 		 			
+				<h4>{{item.title}}</h4>
+				<p>{{item.description}}</p>
+				<p>{{item.created}}</p>
+
+				<div class="btn_see_more">
+					<button class="btn btn-success"> See More</button></div>
+
+ 		 	</div>
+  			
+  	     </div>
+
+			{% endfor%}
+		</div>
+	</div>
+
+
+<div class="item-container">
+		<div class="row" style="margin-top: 50px">
+ 			 {% for item in object_list3 %}
+ 		 <div class="col-lg-3">
+  			{{item}}
+  	     </div>
+
+			{% endfor%}
+		</div>
+	</div>
+       </div>
+    </div>
+
+
+
+</body>
+{% endblock %}

@@ -1,0 +1,48 @@
+
+
+{% extends 'portal/base.html' %}
+{% block main_content %}
+<body>
+<div class="col-sm-6">
+<form action="" method="POST">
+	<h1>Register</h1>
+{% load crispy_forms_tags %}
+	{% csrf_token %}
+
+	{{form|crispy}}
+
+	
+<!--
+<input type="text" id="id_date">{{ form.date }}</input>
+
+<script>
+  $(function () {
+    $("#id_date").datetimepicker({
+      format: 'd/m/Y H:i',
+    });
+  });
+</script>
+-->
+
+	<button type="submit" onclick="myFunction()"> Register</button>
+
+
+
+
+</form>
+</div>
+<script>
+
+function myFunction() {
+ window.alert("data");
+
+}
+
+
+</script>
+
+
+
+{% endblock %}
+</body>
+</html>
